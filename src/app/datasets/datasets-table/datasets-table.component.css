@@ -1,0 +1,10 @@
+.full-width-table {
+  width: 100%;
+}
+a {
+  color: #6958ce !important;
+}
+a:hover {
+  cursor: pointer;
+  text-decoration: underline !important;
+}

@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar><a (click)="drawer.toggle()">Menu</a></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/">Dashboard</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="studies">Studies</a>
+      <a mat-list-item routerLink="participants">Participants</a>
+      <a mat-list-item routerLink="samples">Samples</a>
+      <a mat-list-item routerLink="datasets">Available Data</a>
+      <a mat-list-item routerLink="genetics">Genetics</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="search">Search</a>
+      <a mat-list-item routerLink="admin">Settings</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>SZGEN DB: Mowry Lab and Clinical Database</span>
+      <span class="fill-space"></span>
+      <span><button mat-button><mat-icon>lock</mat-icon> Logout</button></span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <main>
+    <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

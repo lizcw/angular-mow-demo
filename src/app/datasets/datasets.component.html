@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <h3>Available Data</h3>
+  <span class="fillspace"></span>
+  <span><input mat-input type="text" placeholder="Search"></span>
+  <button mat-button color="primary" (click)="onAddDataset()">Add new dataset group</button>
+</mat-toolbar>
+<mat-tab-group>
+  <mat-tab label="Australia-MSG1">
+    <app-datasets-table group="1"></app-datasets-table>
+  </mat-tab>
+  <mat-tab label="Australia-MSG2">
+    <app-datasets-table group="2"></app-datasets-table>
+  </mat-tab>
+  <mat-tab label="India">
+    <app-datasets-table group="3"></app-datasets-table>
+  </mat-tab>
+  <mat-tab label="Sarawak-Screen">
+    <app-datasets-table group="4"></app-datasets-table>
+  </mat-tab>
+  <mat-tab label="Sarawak-Detailed">
+    <app-datasets-table group="5"></app-datasets-table>
+  </mat-tab>
+</mat-tab-group>

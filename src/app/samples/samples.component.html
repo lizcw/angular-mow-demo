@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <h3>Lab Samples</h3>
+  <span class="fillspace"></span>
+  <span><input mat-input type="text" placeholder="Search"></span>
+  <button mat-button color="primary" (click)="onAddSample()">Add new sample</button>
+</mat-toolbar>
+<mat-tab-group>
+  <mat-tab label="All">
+    <app-samples-table></app-samples-table>
+  </mat-tab>
+  <mat-tab label="Leukocyte">
+    <app-leukocyte></app-leukocyte>
+  </mat-tab>
+  <mat-tab label="LCL">
+    <app-lcl></app-lcl>
+  </mat-tab>
+  <mat-tab label="DNA">
+    <app-dna></app-dna>
+  </mat-tab>
+</mat-tab-group>

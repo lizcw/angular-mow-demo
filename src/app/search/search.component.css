@@ -1,0 +1,16 @@
+.search-container {
+  width: 100%;
+  height: 100%;
+}
+.search-side {
+  width: 20%;
+  float:left;
+}
+.search-side ul {
+  list-style: none;
+}
+.search-main {
+  width: 75%;
+  padding: 10px;
+  background-color: white;
+}

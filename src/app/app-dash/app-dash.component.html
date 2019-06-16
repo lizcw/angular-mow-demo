@@ -1,0 +1,39 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <div class="alert alert-info">
+    <p>Summary Statistics with most recent/active studies (configurable in settings) and any relevant graphics.</p>
+    <p>Select from menus in each Panel to go to filtered lists.</p>
+  </div>
+  <mat-grid-list cols="3" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item routerLink="studies">View Studies</button>
+              <button mat-menu-item routerLink="participants">View Participants</button>
+              <button mat-menu-item routerLink="samples">View Samples</button>
+              <button mat-menu-item routerLink="datasets">View Available Datasets</button>
+              <button mat-menu-item routerLink="genetics">View Genetics</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div [ngClass]="{'card-list': card.title === 'Total Statistics'}">
+            <mat-list class="info-list">
+              <mat-list-item *ngFor="let detail of card.details">{{detail}}</mat-list-item>
+            </mat-list>
+          </div>
+          <div class="card-chart" *ngIf="card.title === 'Total Statistics'">
+            <app-bar-chart></app-bar-chart>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

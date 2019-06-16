@@ -1,0 +1,24 @@
+<div class="mat-elevation-z8">
+  <div class="form-container">
+    <mat-toolbar>
+      <h3>Research Study: {{ study.title }}</h3>
+      <button mat-button color="primary" routerLink="/study/edit/{{study.id}}">Edit study</button>
+    </mat-toolbar>
+<br/>
+    <mat-tab-group>
+      <mat-tab label="Details">
+        <h4>Info on study</h4>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab label="Participants">
+        <h4>List of Participants</h4>
+        <p>...</p>
+      </mat-tab>
+      <mat-tab label="Statistics">
+        <h4>Stats</h4>
+        <p>...</p>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="mat-elevation-z8">
+  <div class="form-container">
+    <h3>Research Study: {{ study.title }}</h3>
+    <br/>
+    <form #studyForm="ngForm">
+      <mat-form-field>
+        <input type="text" id="code" name="code"
+               [(ngModel)]="study.code" required
+               #code="ngModel" placeholder="Research Study CODE"
+               matInput>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" id="title" name="title"
+               [(ngModel)]="study.title" required
+               #title="ngModel" matInput
+               placeholder="Research Study Title">
+      </mat-form-field>
+
+      <mat-form-field>
+          <textarea id="description" name="description"
+                    [(ngModel)]="study.description"
+                    #description="ngModel" matInput
+                    placeholder="Description of study"></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select id="status" name="status"
+                    [(ngModel)]="study.status"
+                    #status="ngModel"
+                    placeholder="Select Status">
+          <mat-option value="ongoing">Ongoing</mat-option>
+          <mat-option value="completed">Completed</mat-option>
+          <mat-option value="not funded">Not Funded</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+      <mat-action-row>
+        <button type="button" mat-button color="white" class="black-text waves-light" aria-label="Close">Close</button>
+        <button type="button" mat-button color="red" class="relative waves-light">Save</button>
+      </mat-action-row>
+
+    </form>
+
+  </div>
+</div>
+
